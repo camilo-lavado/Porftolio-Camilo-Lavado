@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import '@glidejs/glide/dist/css/glide.core.min.css';
+@import '@glidejs/glide/dist/css/glide.theme.min.css';
+
+.btn-outline-blue {
+  display: inline-block;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  border-color: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+}
+
+.btn-outline-blue:hover {
+  background-color: #3b82f6;
+  color: #fff;
+}
+.btn-outline-red {
+    display: inline-block;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-width: 1px;
+    border-color: #dc2626;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    background-color: transparent;
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+}
+
+.btn-outline-red:hover {
+    background-color: #dc2626;
+    color: #fff;
+}
+  
+  .btn-danger:hover {
+    background-color: #b91c1c; 
+  }
+  
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.custom-swiper .swiper-pagination {
+  position: static !important;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.custom-swiper .swiper-pagination-bullet {
+  background-color: #3b82f6;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}

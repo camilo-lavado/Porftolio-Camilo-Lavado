@@ -1,0 +1,21 @@
+---
+import "../tailwind.css";
+import BackgroundParticles from "../components/BackgroundParticles.astro";
+import Navbar from "../components/Navbar.astro";
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>Portafolio | Camilo Lavado</title>
+	</head>
+	<body class="relative bg-gray-950 text-white font-sans overflow-x-hidden">
+		<BackgroundParticles />
+		<Navbar />
+		<main class="relative z-10">
+			<slot />
+		</main>
+	</body>
+</html>

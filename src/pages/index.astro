@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
+import ContactForm from "../components/ContactForm";
+import Resume from "../components/Resume.astro";
+import FooterSection from "../components/FooterSection.astro";
+
+---
+
+<Layout>
+  <Hero />
+  <About />
+  <Projects />
+  <Resume />
+  <ContactForm client:load />
+  <FooterSection client:load />
+</Layout>

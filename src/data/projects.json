@@ -1,0 +1,67 @@
+[
+    {
+      "title": "Rugby League Manager",
+      "description": "Plataforma profesional para gestión de ligas de rugby en Chile y Latinoamérica. Backend en NestJS + PostgreSQL.",
+      "tags": ["NestJS", "PostgreSQL", "TypeORM"],
+      "image": "/projects/rugby.png",
+      "url": "https://rugby-manager.camilo.dev"
+    },
+    {
+      "title": "Gestor de Inversiones",
+      "description": "Dashboard que resume inversiones por proyecto, utilizando Angular, MongoDB y NestJS.",
+      "tags": ["Angular", "NestJS", "MongoDB"],
+      "image": "/projects/inversiones.png",
+      "url": "https://inversiones.camilo.dev"
+    },
+    {
+      "title": "Gestor de Proyectos",
+      "description": "Aplicación para gestionar proyectos y tareas, con autenticación JWT y roles de usuario.",
+      "tags": ["Angular", "NestJS", "PostgreSQL"],
+      "image": "/projects/gestor-proyectos.png",
+      "url": "https://gestor-proyectos.camilo.dev"
+    },
+    {
+      "title": "API de Clima",
+      "description": "API RESTful que proporciona datos meteorológicos utilizando OpenWeatherMap.",
+      "tags": ["NestJS", "OpenWeatherMap API"],
+      "image": "/projects/api-clima.png",
+      "url": "https://api-clima.camilo.dev"
+    },
+    {
+      "title": "API de Películas",
+      "description": "API RESTful para gestionar películas, actores y géneros, con autenticación JWT.",
+      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
+      "image": "/projects/api-peliculas.png",
+      "url": "https://api-peliculas.camilo.dev"
+    },
+    {
+      "title": "API de Libros",
+      "description": "API RESTful para gestionar una biblioteca de libros, autores y géneros.",
+      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
+      "image": "/projects/api-libros.png",
+      "url": "https://api-libros.camilo.dev"
+    }
+    ,
+    {
+      "title": "API de Tareas",
+      "description": "API RESTful para gestionar tareas y listas de tareas, con autenticación JWT.",
+      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
+        "image": "/projects/api-tareas.png",
+        "url": "https://api-tareas.camilo.dev"
+    },
+    {
+      "title": "API de Usuarios",
+      "description": "API RESTful para gestionar usuarios, roles y permisos, con autenticación JWT.",
+      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
+      "image": "/projects/api-usuarios.png",
+      "url": "https://api-usuarios.camilo.dev"
+    } ,  
+    {
+      "title": "API de Notas",
+      "description": "API RESTful para gestionar notas y categorías, con autenticación JWT.",
+      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
+      "image": "/projects/api-notas.png",
+      "url": "https://api-notas.camilo.dev"
+    }   
+  ]
+  
