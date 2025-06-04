@@ -7,7 +7,10 @@ import node from '@astrojs/node';
 export default defineConfig({
   output: 'server', // ✅ Necesario para Render (Node deployment)
   adapter: node({ mode: 'standalone' }),
-
+  server: {
+    port: process.env.PORT || 4321,
+    host: true
+  },
   vite: {
     plugins: [tailwindcss()],
   },
