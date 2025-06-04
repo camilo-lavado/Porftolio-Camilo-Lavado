@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-export default function Footer() {
+export default function FooterComponent() {
   return (
     <footer className="relative py-16 mt-24 px-6 text-gray-300 bg-[#0a0a0a] shadow-[0_-2px_20px_rgba(0,0,0,0.5)] border-t border-white/10 overflow-hidden">
       {/* Patrón animado sutil */}

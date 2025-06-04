@@ -2,8 +2,12 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
+import node from '@astrojs/node';
 
 export default defineConfig({
+  output: 'server', // ✅ Necesario para Render (Node deployment)
+  adapter: node({ mode: 'standalone' }),
+
   vite: {
     plugins: [tailwindcss()],
   },
