@@ -1,15 +1,22 @@
-import { Resend } from 'resend';
-import 'dotenv/config';
+// src/pages/api/contact.ts
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+// Carga dotenv solo en desarrollo local
+if (process.env.NODE_ENV !== 'production') {
+  await import('dotenv').then((dotenv) => dotenv.config());
+}
+
+import { Resend } from 'resend';
+
+// Astro necesita esto para permitir endpoints dinámicos
 export const prerender = false;
 
+const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export async function POST({ request }: { request: Request }) {
   try {
     const { name, email, message } = await request.json();
 
-    // Validación básica del lado servidor
+    // Validación básica del servidor
     if (
       typeof name !== 'string' ||
       typeof email !== 'string' ||
@@ -36,6 +43,7 @@ export async function POST({ request }: { request: Request }) {
 
     return new Response(JSON.stringify({ result }), { status: 200 });
   } catch (error) {
+    console.error('Error en envío de email:', error);
     return new Response(
       JSON.stringify({ error: 'Ocurrió un error al enviar.' }),
       { status: 500 }
