@@ -3,28 +3,28 @@
       "title": "Rugby League Manager - Api",
       "description": "Plataforma profesional para gestión de ligas de rugby en Chile y Latinoamérica. Backend en NestJS + PostgreSQL.",
       "tags": ["NestJS", "PostgreSQL", "TypeORM"],
-      "image": "/src/assets/projects/RLM-Backend.webp",
+      "image": "/public/projects/RLM-Backend.webp",
       "url": "https://rugby-league-manager-backend.onrender.com/api/docs"
     },
     {
       "title": "Almacenes Digitales",
       "description": "Plataforma de gestión de inventarios y ventas para almacenes, con autenticación JWT y gestión de usuarios.",
       "tags": ["Java", "Mysql", "Spring Boot", "JWT","PrimeFaces"],
-      "image": "/src/assets/projects/Adigitales.webp",
+      "image": "/public/projects/Adigitales.webp",
       "url": "https://www.almacenesdigitales.cl"
     },
     {
       "title": "AD-data",
       "description": "Plataforma de gestión de datos y análisis para almacenes digitales, con dashboard y reportes. **Acceso solo para clientes**.",
       "tags": ["Java", "Mysql", "Spring Boot", "JWT","React", "Power BI"],
-      "image": "/src/assets/projects/AD-data.webp",
+      "image": "/public/projects/AD-data.webp",
       "url": "https://ad-data.cl/"
     },
     {
       "title": "Rugby League Manager - Frontend",
       "description": "Plataforma profesional para gestión de ligas de rugby en Chile y Latinoamérica. Frontend en Angular.",
       "tags": ["Angular", "NestJS", "PostgreSQL"],
-      "image": "/src/assets/projects/RLM-Frontend.webp",
+      "image": "/public/projects/RLM-Frontend.webp",
       "url": "https://github.com/camilo-lavado/Rugby-League-Manager-Frontend"
     }
   ]
