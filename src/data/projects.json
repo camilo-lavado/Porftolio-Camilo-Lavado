@@ -1,67 +1,31 @@
 [
     {
-      "title": "Rugby League Manager",
+      "title": "Rugby League Manager - Api",
       "description": "Plataforma profesional para gestión de ligas de rugby en Chile y Latinoamérica. Backend en NestJS + PostgreSQL.",
       "tags": ["NestJS", "PostgreSQL", "TypeORM"],
-      "image": "/projects/rugby.png",
-      "url": "https://rugby-manager.camilo.dev"
+      "image": "/src/assets/projects/RLM-Backend.png",
+      "url": "https://rugby-league-manager-backend.onrender.com/api/docs"
     },
     {
-      "title": "Gestor de Inversiones",
-      "description": "Dashboard que resume inversiones por proyecto, utilizando Angular, MongoDB y NestJS.",
-      "tags": ["Angular", "NestJS", "MongoDB"],
-      "image": "/projects/inversiones.png",
-      "url": "https://inversiones.camilo.dev"
+      "title": "Almacenes Digitales",
+      "description": "Plataforma de gestión de inventarios y ventas para almacenes, con autenticación JWT y gestión de usuarios.",
+      "tags": ["Java", "Mysql", "Spring Boot", "JWT","PrimeFaces"],
+      "image": "/src/assets/projects/Adigitales.png",
+      "url": "https://www.almacenesdigitales.cl"
     },
     {
-      "title": "Gestor de Proyectos",
-      "description": "Aplicación para gestionar proyectos y tareas, con autenticación JWT y roles de usuario.",
+      "title": "AD-data",
+      "description": "Plataforma de gestión de datos y análisis para almacenes digitales, con dashboard y reportes. **Acceso solo para clientes**.",
+      "tags": ["Java", "Mysql", "Spring Boot", "JWT","React", "Power BI"],
+      "image": "/src/assets/projects/AD-data.png",
+      "url": "https://ad-data.cl/"
+    },
+    {
+      "title": "Rugby League Manager - Frontend",
+      "description": "Plataforma profesional para gestión de ligas de rugby en Chile y Latinoamérica. Frontend en Angular.",
       "tags": ["Angular", "NestJS", "PostgreSQL"],
-      "image": "/projects/gestor-proyectos.png",
-      "url": "https://gestor-proyectos.camilo.dev"
-    },
-    {
-      "title": "API de Clima",
-      "description": "API RESTful que proporciona datos meteorológicos utilizando OpenWeatherMap.",
-      "tags": ["NestJS", "OpenWeatherMap API"],
-      "image": "/projects/api-clima.png",
-      "url": "https://api-clima.camilo.dev"
-    },
-    {
-      "title": "API de Películas",
-      "description": "API RESTful para gestionar películas, actores y géneros, con autenticación JWT.",
-      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
-      "image": "/projects/api-peliculas.png",
-      "url": "https://api-peliculas.camilo.dev"
-    },
-    {
-      "title": "API de Libros",
-      "description": "API RESTful para gestionar una biblioteca de libros, autores y géneros.",
-      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
-      "image": "/projects/api-libros.png",
-      "url": "https://api-libros.camilo.dev"
+      "image": "/src/assets/projects/RLM-Frontend.png",
+      "url": "https://github.com/camilo-lavado/Rugby-League-Manager-Frontend"
     }
-    ,
-    {
-      "title": "API de Tareas",
-      "description": "API RESTful para gestionar tareas y listas de tareas, con autenticación JWT.",
-      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
-        "image": "/projects/api-tareas.png",
-        "url": "https://api-tareas.camilo.dev"
-    },
-    {
-      "title": "API de Usuarios",
-      "description": "API RESTful para gestionar usuarios, roles y permisos, con autenticación JWT.",
-      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
-      "image": "/projects/api-usuarios.png",
-      "url": "https://api-usuarios.camilo.dev"
-    } ,  
-    {
-      "title": "API de Notas",
-      "description": "API RESTful para gestionar notas y categorías, con autenticación JWT.",
-      "tags": ["NestJS", "TypeORM", "PostgreSQL"],
-      "image": "/projects/api-notas.png",
-      "url": "https://api-notas.camilo.dev"
-    }   
   ]
   
