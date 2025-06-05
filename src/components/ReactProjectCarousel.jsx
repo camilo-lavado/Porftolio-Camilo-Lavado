@@ -35,24 +35,24 @@ export default function ReactProjectCarousel() {
 
   return (
     <section className="py-20 px-4 max-w-6xl mx-auto" id="projects">
-      <h2 className="text-3xl font-bold text-white mb-8 text-center">
+      <h2 className="text-3xl font-bold text-white mb-10 text-center">
         Proyectos Destacados
       </h2>
 
-      {/* Flechas visibles solo en sm+ */}
-      <div className="flex justify-center gap-6 mb-6">
+      {/* Flechas azules visibles solo en sm+ */}
+      <div className="flex justify-center gap-6 mb-6 sm:flex hidden">
         <button
           ref={prevRef}
-          className="text-white hover:text-blue-500 text-2xl border px-4 py-1 rounded hidden sm:flex"
-          aria-label="Proyecto anterior"
+          className="text-blue-500 border border-blue-500 hover:bg-blue-600 hover:text-white text-lg px-4 py-2 rounded-full transition"
+          aria-label="Anterior"
           title="Proyecto anterior"
         >
           ←
         </button>
         <button
           ref={nextRef}
-          className="text-white hover:text-blue-500 text-2xl border px-4 py-1 rounded hidden sm:flex"
-          aria-label="Proyecto siguiente"
+          className="text-blue-500 border border-blue-500 hover:bg-blue-600 hover:text-white text-lg px-4 py-2 rounded-full transition"
+          aria-label="Siguiente"
           title="Proyecto siguiente"
         >
           →
@@ -90,7 +90,7 @@ export default function ReactProjectCarousel() {
         className="custom-swiper"
       >
         {projects.map((project) => (
-          <SwiperSlide key={project.title}>
+          <SwiperSlide key={project.title} className="mt-6">
             <motion.a
               href={project.url || '#'}
               target="_blank"
@@ -103,15 +103,15 @@ export default function ReactProjectCarousel() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
             >
-              <div className="bg-white/5 hover:bg-blue-900/10 p-4 rounded-xl border border-[1px] border-white/10 hover:border-blue-500 transition duration-300 h-full min-h-[340px]">
+              <div className="bg-white/5 hover:bg-blue-900/10 p-3 rounded-xl border border-[1px] border-white/10 hover:border-blue-500 transition duration-300 h-full min-h-[300px]">
                 <div className="h-full flex flex-col justify-between">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="rounded mb-4 object-cover w-full h-40"
+                    className="rounded mb-3 object-cover w-full h-36"
                     loading="lazy"
                   />
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                  <h3 className="text-lg font-semibold text-white mb-2">
                     {project.title}
                   </h3>
                   <p className="text-sm text-gray-300 mb-3 flex-grow">

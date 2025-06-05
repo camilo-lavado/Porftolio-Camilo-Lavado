@@ -71,3 +71,27 @@ html {
 .custom-swiper .swiper-pagination-bullet-active {
   opacity: 1;
 }
+
+/* Oculta SOLO las flechas azules nativas de Swiper */
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev:not([ref]),
+.swiper-button-next:not([ref]) {
+  display: none !important;
+}
+
+#cv > div > div > button > svg {
+  display: block;
+  margin: 0 auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #fff;
+}
+
+#cv > div > div > a > svg {
+  display: block;
+  margin: 0 auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #fff;
+}
