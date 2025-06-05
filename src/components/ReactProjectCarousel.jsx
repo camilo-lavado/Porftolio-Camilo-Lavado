@@ -1,5 +1,5 @@
+import { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useRef } from 'react';
 import {
   Navigation,
   Pagination,
@@ -15,9 +15,23 @@ import { motion } from 'framer-motion';
 import projects from '../data/projects.json';
 
 export default function ReactProjectCarousel() {
-  const swiperRef = useRef();
+  const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  useEffect(() => {
+    if (
+      swiperRef.current &&
+      prevRef.current &&
+      nextRef.current &&
+      swiperRef.current.params?.navigation
+    ) {
+      swiperRef.current.params.navigation.prevEl = prevRef.current;
+      swiperRef.current.params.navigation.nextEl = nextRef.current;
+      swiperRef.current.navigation?.init();
+      swiperRef.current.navigation?.update();
+    }
+  }, []);
 
   return (
     <section className="py-20 px-4 max-w-6xl mx-auto" id="projects">
@@ -25,24 +39,34 @@ export default function ReactProjectCarousel() {
         Proyectos Destacados
       </h2>
 
-      {/* Flechas */}
+      {/* Flechas visibles solo en sm+ */}
       <div className="flex justify-center gap-6 mb-6">
         <button
           ref={prevRef}
-          className="text-white hover:text-blue-500 text-2xl border px-4 py-1 rounded"
+          className="text-white hover:text-blue-500 text-2xl border px-4 py-1 rounded hidden sm:flex"
+          aria-label="Proyecto anterior"
+          title="Proyecto anterior"
         >
           ←
         </button>
         <button
           ref={nextRef}
-          className="text-white hover:text-blue-500 text-2xl border px-4 py-1 rounded"
+          className="text-white hover:text-blue-500 text-2xl border px-4 py-1 rounded hidden sm:flex"
+          aria-label="Proyecto siguiente"
+          title="Proyecto siguiente"
         >
           →
         </button>
       </div>
 
+      {/* Swipe hint para móviles */}
+      <p className="text-center text-sm text-gray-400 mb-4 sm:hidden animate-pulse">
+        ⇢ Desliza para ver más proyectos
+      </p>
+
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+        loop={true}
         effect="coverflow"
         coverflowEffect={{
           rotate: 20,
@@ -59,10 +83,7 @@ export default function ReactProjectCarousel() {
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-        }}
+        navigation
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
