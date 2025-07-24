@@ -26,5 +26,13 @@
     "tags": ["Angular", "NestJS", "PostgreSQL"],
     "image": "/projects/RLM-Frontend.webp",
     "url": "https://github.com/camilo-lavado/Rugby-League-Manager-Frontend"
+  },
+  {
+    "title": "Portafolio diseñador UX/UI - Matías Valencia",
+    "description": "*EN PROGRESO* ",
+    "tags": ["Astro", "Tailwind", "React"],
+    "image": "/projects/MV-Portfolio.webp",
+    "url": "https://portfolio-mv-12zs.onrender.com/es"
   }
 ]
+
