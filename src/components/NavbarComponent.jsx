@@ -37,11 +37,11 @@ export default function NavbarComponent() {
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
        <a href="#home" className="flex items-center gap-2 text-white font-mono font-bold text-lg">
   <img
-    src="/Logo.png"
+    src="/logo.svg"
     alt="Camilo Lavado Logo"
-    className="h-8 w-8 rounded-full border border-white/20 shadow-sm"
+    className="h-10 w-10 shadow-sm"
   />
-  Inicio
+  Camilo Lavado
 </a>
 
 
