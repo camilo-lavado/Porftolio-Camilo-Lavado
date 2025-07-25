@@ -8,7 +8,7 @@
   },
   {
     "title": "Almacenes Digitales",
-    "description": "Sistema web para el control de inventario y ventas, con login seguro, administración de usuarios y reportes personalizados.",
+    "description": "Sistema web para el control de inventario y ventas, con login seguro, administración de usuarios y reportes personalizados. Trabajé en la implementación de nuevos modulos como el de fiados y ventas.",
     "tags": ["Java", "MySQL", "Spring Boot", "JWT", "PrimeFaces"],
     "image": "/projects/Adigitales.webp",
     "url": "https://www.almacenesdigitales.cl"
@@ -19,13 +19,6 @@
     "tags": ["Java", "MySQL", "Spring Boot", "JWT", "React", "Power BI"],
     "image": "/projects/AD-data.webp",
     "url": "https://ad-data.cl/"
-  },
-  {
-    "title": "Rugby League Manager - Frontend",
-    "description": "*EN PROGRESO* Frontend en Angular para la gestión visual de equipos, ligas y métricas de juego. **Proyecto actualmente en desarrollo.**",
-    "tags": ["Angular", "NestJS", "PostgreSQL"],
-    "image": "/projects/RLM-Frontend.webp",
-    "url": "https://github.com/camilo-lavado/Rugby-League-Manager-Frontend"
   },
   {
     "title": "Portafolio diseñador UX/UI - Matías Valencia",

@@ -1,0 +1,7 @@
+{
+    "title": "Rugby League Manager - Frontend",
+    "description": "*EN PROGRESO* Frontend en Angular para la gestión visual de equipos, ligas y métricas de juego. **Proyecto actualmente en desarrollo.**",
+    "tags": ["Angular", "NestJS", "PostgreSQL"],
+    "image": "/projects/RLM-Frontend.webp",
+    "url": "https://github.com/camilo-lavado/Rugby-League-Manager-Frontend"
+  }
