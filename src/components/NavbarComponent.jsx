@@ -35,10 +35,15 @@ export default function NavbarComponent() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-black/90 border-b border-white/10 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#home" className="text-white font-mono font-bold text-lg">
-          Inicio
-        </a>
+       <a href="#home" className="flex items-center gap-2 text-white font-mono font-bold text-lg">
+  <img
+    src="/Logo.png"
+    alt="Camilo Lavado Logo"
+    className="h-8 w-8 rounded-full border border-white/20 shadow-sm"
+  />
+  Inicio
+</a>
+
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 items-center text-sm font-medium">
