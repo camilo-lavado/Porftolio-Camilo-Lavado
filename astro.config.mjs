@@ -13,7 +13,17 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      minify: 'esbuild', // ✅ Asegura minificación eficiente (esbuild es rápido y moderno)
+    },
+    resolve: {
+      alias: {
+        '@/components': new URL('./src/components', import.meta.url).pathname,
+        '@/assets': new URL('./public', import.meta.url).pathname,
+        '@/styles': new URL('./src/styles', import.meta.url).pathname,
+      },
+    },
   },
-
   integrations: [react()],
+  trailingSlash: 'never', // ✅ Rutas limpias: /about en lugar de /about/
 });

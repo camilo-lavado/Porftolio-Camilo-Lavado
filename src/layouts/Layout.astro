@@ -3,19 +3,60 @@ import "../tailwind.css";
 import BackgroundParticles from "../components/BackgroundParticles.astro";
 import Navbar from "../components/Navbar.astro";
 ---
+
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>Portafolio | Camilo Lavado</title>
-	</head>
-	<body class="relative bg-gray-950 text-white font-sans overflow-x-hidden">
-		<BackgroundParticles />
-		<Navbar />
-		<main class="relative z-10">
-			<slot />
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Portafolio de Camilo Lavado, desarrollador full stack con experiencia en NestJS, Java, SQL y sistemas de alto rendimiento."
+    />
+    <meta
+      property="og:title"
+      content="Camilo Lavado | Desarrollador Full Stack"
+    />
+    <meta
+      property="og:description"
+      content="Portafolio profesional con proyectos en NestJS, Java, Angular y más. Santiago, Chile."
+    />
+    <meta
+      property="og:image"
+      content="https://camilo-lavado.dev/og-cover.webp"
+    />
+    <meta property="og:url" content="https://camilo-lavado.dev" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Camilo Lavado | Desarrollador Full Stack"
+    />
+    <meta
+      name="twitter:description"
+      content="Portafolio profesional con proyectos en NestJS, Java, Angular y más. Santiago, Chile."
+    />
+    <meta
+      name="twitter:image"
+      content="https://camilo-lavado.dev/og-cover.webp"
+    />
+    <meta name="twitter:site" content="@camilo_lavado" />
+    <meta name="twitter:creator" content="@camilo_lavado" />
+    <meta name="theme-color" content="#1a202c" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Camilo Lavado | Full Stack Developer</title>
+  </head>
+  <body class="relative bg-gray-950 text-white font-sans overflow-x-hidden">
+    <BackgroundParticles />
+    <Navbar />
+    <main class="relative z-10">
+      <slot />
+    </main>
+  </body>
 </html>

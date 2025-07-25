@@ -7,3 +7,21 @@ services:
     buildCommand: npm install && npm run build
     startCommand: node ./dist/server/entry.mjs
     rootDir: .
+    headers:
+      - path: "/**/*.webp"
+        headers:
+          - "Cache-Control: public, max-age=31536000, immutable"
+      - path: "/**/*.woff2"
+        headers:
+          - "Cache-Control: public, max-age=31536000, immutable"
+      - path: "/**/*.js"
+        headers:
+          - "Cache-Control: public, max-age=604800"
+      - path: "/**/*.css"
+        headers:
+          - "Cache-Control: public, max-age=604800"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: RESEND_API_KEY
+        sync: false
