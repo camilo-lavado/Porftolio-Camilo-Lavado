@@ -24,16 +24,15 @@
         { "key": "X-XSS-Protection", "value": "1; mode=block" },
         { 
           "key": "Content-Security-Policy", 
-          "value": "default-src 'self'; img-src * data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; frame-src 'self' data: blob:; object-src 'self'; worker-src 'self' blob:; child-src 'self' blob:; media-src 'self' data: blob:" 
+          "value": "default-src 'self' https://docs.google.com https://docs.googleusercontent.com; img-src * data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src 'self' https://docs.google.com https://drive.google.com" 
         }
       ]
     },
     {
       "source": "/cv/:path*",
       "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Content-Type", "value": "application/pdf" },
-        { "key": "Content-Disposition", "value": "inline" }
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Content-Type", "value": "application/pdf" }
       ]
     }
   ]
