@@ -1,14 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        { "type": "host", "value": "www.camilo-lavado.dev" }
-      ],
-      "destination": "https://camilo-lavado.dev/$1",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
