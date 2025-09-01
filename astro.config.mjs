@@ -2,19 +2,15 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel'; // ✅ no uses /serverless
 
 export default defineConfig({
-  output: 'server', // ✅ Necesario para Render (Node deployment)
-  adapter: node({ mode: 'standalone' }),
-  server: {
-    port: Number(process.env.PORT) || 4321,
-    host: true,
-  },
+  output: 'server', // o 'static' si tu portfolio no necesita SSR
+  adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
     build: {
-      minify: 'esbuild', // ✅ Asegura minificación eficiente (esbuild es rápido y moderno)
+      minify: 'esbuild',
     },
     resolve: {
       alias: {
@@ -25,5 +21,5 @@ export default defineConfig({
     },
   },
   integrations: [react()],
-  trailingSlash: 'never', // ✅ Rutas limpias: /about en lugar de /about/
+  trailingSlash: 'never',
 });
