@@ -1,26 +1,28 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "www.camilo-lavado.dev" }],
-      "destination": "https://camilo-lavado.dev/:1",
+      "destination": "https://camilo-lavado.dev/:path*",
       "permanent": true
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "portfolio-camilo-lavado.vercel.app" }],
-      "destination": "https://camilo-lavado.dev/:1",
+      "destination": "https://camilo-lavado.dev/:path*",
       "permanent": true
     }
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "headers": [
         { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src *; script-src 'self'; style-src 'self' 'unsafe-inline'" }
       ]
     }
   ]
