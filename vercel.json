@@ -1,20 +1,31 @@
 {
-  "headers": [
+  "redirects": [
     {
-      "source": "/cv/(.*)",
-      "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Content-Security-Policy", "value": "frame-ancestors 'self'" }
-      ]
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.camilo-lavado.dev" }],
+      "destination": "https://camilo-lavado.dev/:1",
+      "permanent": true
     },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "portfolio-camilo-lavado.vercel.app" }],
+      "destination": "https://camilo-lavado.dev/:1",
+      "permanent": true
+    }
+  ],
+  "headers": [
     {
       "source": "/(.*)",
       "headers": [
         { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; frame-src 'self'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://*.vercel-scripts.com; connect-src 'self' https://vitals.vercel-insights.com https://*.vercel-scripts.com;"
+        }
       ]
     }
   ]

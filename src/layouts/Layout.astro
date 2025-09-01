@@ -4,7 +4,6 @@ import BackgroundParticles from "../components/BackgroundParticles.astro";
 import Navbar from "../components/Navbar.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import Analytics from "@vercel/analytics/astro";
-const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 
 <!doctype html>
@@ -13,6 +12,8 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <!-- 🔍 SEO y Social Meta -->
     <meta
       name="description"
       content="Portafolio de Camilo Lavado, desarrollador full stack con experiencia en NestJS, Java, SQL y sistemas de alto rendimiento."
@@ -31,6 +32,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     />
     <meta property="og:url" content="https://camilo-lavado.dev" />
     <meta property="og:type" content="website" />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -46,7 +48,10 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     />
     <meta name="twitter:site" content="@camilo_lavado" />
     <meta name="twitter:creator" content="@camilo_lavado" />
+
     <meta name="theme-color" content="#1a202c" />
+
+    <!-- 🔠 Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -54,32 +59,17 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
       rel="stylesheet"
     />
 
-    {
-      GA_ID && (
-        <>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          />
-          <script is:inline>
-            {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}');
-          `}
-          </script>
-        </>
-      )
-    }
-
     <title>Camilo Lavado | Full Stack Developer</title>
   </head>
   <body class="relative bg-gray-950 text-white font-sans overflow-x-hidden">
+    <!-- 📊 Vercel Integrations -->
     <Analytics />
     <SpeedInsights />
+
+    <!-- 🎨 UI -->
     <BackgroundParticles />
     <Navbar />
+
     <main class="relative z-10">
       <slot />
     </main>
