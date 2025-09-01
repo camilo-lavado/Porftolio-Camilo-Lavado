@@ -3,6 +3,7 @@ import "../tailwind.css";
 import BackgroundParticles from "../components/BackgroundParticles.astro";
 import Navbar from "../components/Navbar.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from "@vercel/analytics/astro";
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 
@@ -75,6 +76,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     <title>Camilo Lavado | Full Stack Developer</title>
   </head>
   <body class="relative bg-gray-950 text-white font-sans overflow-x-hidden">
+    <Analytics />
     <SpeedInsights />
     <BackgroundParticles />
     <Navbar />
