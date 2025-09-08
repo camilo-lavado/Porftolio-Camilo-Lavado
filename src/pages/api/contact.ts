@@ -31,7 +31,7 @@ export async function POST({ request }: { request: Request }) {
     }
 
     const result = await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'contact@camilo-lavado.dev',
       to: 'camilolavado.it@gmail.com',
       subject: `Nuevo mensaje de ${name}`,
       html: `
