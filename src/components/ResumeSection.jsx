@@ -22,29 +22,10 @@ async function head(url) {
   }
 }
 
-// tokens de estilo coherentes (azul) + hover
-const useBtnClasses = () => {
-  const base =
-    'inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold transition ' +
-    'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-400 focus-visible:ring-offset-black ' +
-    'transform transition-transform duration-200'; // añadimos transform
-  return {
-    primary:
-      base +
-      ' border border-blue-500/40 bg-blue-500/10 hover:bg-blue-500/20 text-blue-200 ' +
-      'hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] shadow-[0_0_0_1px_rgba(59,130,246,0.15)]',
-    outline:
-      base +
-      ' border border-blue-400/30 text-blue-200 bg-white/[0.03] hover:bg-blue-500/10 ' +
-      'hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)]',
-  };
-};
-
 export default function ResumeSection() {
   const [meta, setMeta] = useState({ ok: true });
   const [prefetched, setPrefetched] = useState(false);
   const [ack, setAck] = useState(null); // null | 'opened' | 'downloaded'
-  const btn = useBtnClasses();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -86,19 +67,21 @@ export default function ResumeSection() {
   return (
     <section
       id="cv"
-      className="relative py-24 px-6 max-w-4xl mx-auto text-white flex flex-col items-center justify-center"
+      className="relative py-24 px-6 max-w-4xl mx-auto text-white flex flex-col items-center justify-center font-outfit"
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-blue-500/15 to-transparent blur-2xl" />
-      <h2 className="text-4xl font-extrabold text-center mb-10 tracking-tight">Currículum Vitae</h2>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-teal-500/10 to-transparent blur-3xl opacity-50" />
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 tracking-tight relative">
+        Currículum <span className="text-gradient">Vitae</span>
+      </h2>
 
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-xl backdrop-blur-md flex flex-col items-center justify-center">
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 glass-panel flex flex-col items-center justify-center transition-all duration-500 hover:border-teal-400/30 hover:shadow-[0_0_30px_rgba(45,212,191,0.15)] w-full max-w-2xl">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          className="pointer-events-none absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              'linear-gradient(to right, rgba(255,255,255,.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.15) 1px, transparent 1px)',
-            backgroundSize: '24px 24px',
+              'linear-gradient(to right, rgba(45,212,191,1) 1px, transparent 1px), linear-gradient(to bottom, rgba(45,212,191,1) 1px, transparent 1px)',
+            backgroundSize: '32px 32px',
           }}
         />
 
@@ -112,14 +95,14 @@ export default function ResumeSection() {
               transition={{ duration: 0.45 }}
               className="relative p-10 text-center flex flex-col items-center justify-center"
             >
-              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500/15 ring-1 ring-emerald-400/40">
-                <CheckCircle2 className="h-7 w-7 text-emerald-300" aria-hidden />
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-500/15 ring-1 ring-teal-400/40 shadow-[0_0_20px_rgba(45,212,191,0.2)]">
+                <CheckCircle2 className="h-8 w-8 text-teal-300" aria-hidden />
               </div>
-              <h3 className="text-2xl font-semibold text-emerald-200 mb-2">{ackCopy.title}</h3>
-              <p className="text-emerald-100/90">{ackCopy.text} Gracias por tu interés!</p>
+              <h3 className="text-2xl font-semibold text-teal-200 mb-2">{ackCopy.title}</h3>
+              <p className="text-teal-100/80 mb-6">{ackCopy.text} Gracias por tu interés!</p>
               <button
                 onClick={() => setAck(null)}
-                className="mt-6 inline-flex text-sm text-blue-300/90 underline decoration-blue-400/60 underline-offset-4 hover:text-blue-200"
+                className="inline-flex px-6 py-2 rounded-full border border-teal-500/30 text-sm text-teal-300 hover:bg-teal-500/10 hover:text-teal-200 transition-colors"
               >
                 Volver
               </button>
@@ -140,13 +123,13 @@ export default function ResumeSection() {
                 <p className="text-gray-300">Descarga el PDF o ábrelo en una pestaña nueva.</p>
               </div>
 
-              <div className="relative flex flex-col md:flex-row justify-center items-center gap-4">
+              <div className="relative flex flex-col sm:flex-row items-center gap-4 w-full justify-center mt-6">
                 <a
                   href={CV_PATH}
                   download
                   onMouseEnter={prefetch}
                   onClick={onDownloadClick}
-                  className={btn.primary}
+                  className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 font-medium hover:bg-teal-500/20 hover:border-teal-400 hover:shadow-[0_0_15px_rgba(45,212,191,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
                 >
                   <Download className="h-5 w-5" aria-hidden />
                   Descargar CV
@@ -155,10 +138,10 @@ export default function ResumeSection() {
                 <button
                   onClick={openNewTab}
                   onMouseEnter={prefetch}
-                  className={btn.outline}
+                  className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-gray-300 font-medium hover:bg-white/10 hover:text-white hover:border-white/30 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
                 >
                   <ExternalLink className="h-5 w-5" aria-hidden />
-                  Abrir en nueva pestaña
+                  Abrir pestaña
                 </button>
               </div>
 

@@ -1,34 +1,41 @@
 ---
 ---
 
-<section class="py-20 px-4 md:px-0 max-w-4xl mx-auto text-center" id="about">
-  <h2 class="text-3xl font-bold text-white mb-4">Sobre Mí</h2>
+<section class="py-24 px-4 md:px-0 max-w-4xl mx-auto text-center" id="about">
+  <div class="glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden group">
+    {/* Decorative background glow */}
+    <div class="absolute -top-24 -right-24 w-48 h-48 bg-teal-500/20 rounded-full blur-3xl group-hover:bg-teal-400/30 transition-colors duration-500"></div>
+    <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl group-hover:bg-blue-400/30 transition-colors duration-500"></div>
 
-  <p class="text-gray-300 mb-6 leading-relaxed">
-    Soy desarrollador full stack con experiencia en <strong>bases de datos relacionales</strong> (SQL Server, MySQL), <strong>backend moderno</strong> con <strong>NestJS, Node.js, Java (Spring)</strong> y sistemas legados en <strong>.NET y C#</strong>. Me especializo en <strong>optimización de consultas</strong>, <strong>automatización de procesos</strong> y <strong>desarrollo de APIs RESTful</strong> robustas y eficientes.
-  </p>
+    <div class="relative z-10">
+      <h2 class="text-3xl md:text-5xl font-outfit font-bold text-white mb-8 tracking-tight inline-block relative">
+        Sobre Mí
+        <div class="absolute -bottom-2 left-0 w-1/2 h-1 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full"></div>
+      </h2>
 
-  <p class="text-gray-300 mb-6 leading-relaxed">
-    He participado en proyectos empresariales aplicando <strong>metodologías ágiles (Scrum)</strong>, control de versiones con <strong>Git/GitHub</strong> y gestión de tareas en <strong>Azure DevOps, Jira e ITM Platform</strong>. También tengo experiencia en <strong>frontend</strong> con <strong>Angular, React y Primefaces</strong>, e integración de servicios externos como <strong>WhatsApp Business</strong> e <strong>Instagram Basic API</strong>.
-  </p>
+      <p class="text-gray-300 mb-6 leading-relaxed md:text-lg text-left">
+        Soy desarrollador full stack con experiencia en <strong class="text-teal-400">bases de datos relacionales</strong> (SQL Server, MySQL), <strong class="text-teal-400">backend moderno</strong> con <strong class="text-teal-400">NestJS, Node.js, Java (Spring)</strong> y sistemas legados en <strong class="text-teal-400">.NET y C#</strong>. Me especializo en <strong>optimización de consultas</strong>, <strong>automatización de procesos</strong> y <strong>desarrollo de APIs RESTful</strong> robustas y eficientes.
+      </p>
 
-  <p class="text-gray-300 mb-8 leading-relaxed">
-    Siempre estoy en constante formación en <strong>nuevas tecnlogías</strong> y <strong>mejores prácticas de desarrollo</strong>, buscando aportar soluciones que mejoren el rendimiento, la escalabilidad y la mantenibilidad de los sistemas.
-  </p>
+      <p class="text-gray-300 mb-6 leading-relaxed md:text-lg text-left">
+        He participado en proyectos empresariales aplicando <strong>metodologías ágiles (Scrum)</strong>, control de versiones con <strong>Git/GitHub</strong> y gestión de tareas en <strong>Azure DevOps, Jira e ITM Platform</strong>. También tengo experiencia en <strong>frontend</strong> con <strong class="text-blue-400">Angular, React y Primefaces</strong>, e integración de servicios externos como <strong class="text-green-400">WhatsApp Business</strong> e <strong class="text-pink-400">Instagram Basic API</strong>.
+      </p>
 
-  <h3 class="text-xl font-semibold text-white mb-4">Stack principal</h3>
-  <div class="flex flex-wrap justify-center gap-4">
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">NestJS</span>
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">Java</span>
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">Node.js</span>
-   
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">Node.js</span>
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">TypeScript</span>
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">PostgreSQL</span>
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">SQL Server</span>
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">Spring</span>
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">Angular</span>
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">React</span>
-    <span class="px-3 py-1 rounded bg-blue-900 text-blue-300 text-sm font-mono">Tailwind</span>
+      <p class="text-gray-300 mb-10 leading-relaxed md:text-lg text-left">
+        Siempre estoy en constante formación en <strong>nuevas tecnologías</strong> y <strong>mejores prácticas de desarrollo</strong>, buscando aportar soluciones que mejoren el rendimiento, la escalabilidad y la mantenibilidad de los sistemas.
+      </p>
+
+      <h3 class="text-2xl font-outfit font-semibold text-white mb-6">Stack Principal</h3>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[
+          'NestJS', 'Java', 'Node.js', 'TypeScript', 'PostgreSQL', 
+          'SQL Server', 'Spring', 'Angular', 'React', 'Tailwind CSS'
+        ].map((tech) => (
+          <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-200 text-sm font-medium hover:bg-white/10 hover:border-teal-400/50 hover:text-teal-300 transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.1)] cursor-default">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
   </div>
 </section>

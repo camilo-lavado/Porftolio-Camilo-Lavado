@@ -1,0 +1,8 @@
+14:58:11 [ERROR] [@astrojs/vercel] An unhandled error occurred while running the "astro:build:done" hook
+EPERM: operation not permitted, symlink '.pnpm\react@19.1.1\node_modules\react' -> 'C:\Archivos\02_Proyectos_Dev\astro\Camilo Lavado\.vercel\output\functions\_render.func\node_modules\react'
+  Stack trace:
+    at async Module.symlink (node:internal/fs/promises:999:10)
+    at async copyDependenciesToFunction (file:///C:/Archivos/02_Proyectos_Dev/astro/Camilo%20Lavado/node_modules/.pnpm/@astrojs+vercel@8.2.7_astro@5.13.5_@types+node@24.3.0_@vercel+functions@2.2.13_jiti@2.5.1_lig_7algd6eo6lro2fp7mo3uokx4km/node_modules/@astrojs/vercel/dist/lib/nft.js:42:26)
+    at async astro:build:done (file:///C:/Archivos/02_Proyectos_Dev/astro/Camilo%20Lavado/node_modules/.pnpm/@astrojs+vercel@8.2.7_astro@5.13.5_@types+node@24.3.0_@vercel+functions@2.2.13_jiti@2.5.1_lig_7algd6eo6lro2fp7mo3uokx4km/node_modules/@astrojs/vercel/dist/index.js:322:15)
+    at async runHookInternal (file:///C:/Archivos/02_Proyectos_Dev/astro/Camilo%20Lavado/node_modules/.pnpm/astro@5.13.5_@types+node@24.3.0_@vercel+functions@2.2.13_jiti@2.5.1_lightningcss@1.30.1_rollu_wzfxnvgfpw5megudkotj65lpt4/node_modules/astro/dist/integrations/hooks.js:51:5)
+    at async AstroBuilder.build (file:///C:/Archivos/02_Proyectos_Dev/astro/Camilo%20Lavado/node_modules/.pnpm/astro@5.13.5_@types+node@24.3.0_@vercel+functions@2.2.13_jiti@2.5.1_lightningcss@1.30.1_rollu_wzfxnvgfpw5megudkotj65lpt4/node_modules/astro/dist/core/build/index.js:164:5)

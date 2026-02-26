@@ -1,0 +1,30 @@
+
+> lunar-shell@0.0.1 astro C:\Archivos\02_Proyectos_Dev\astro\Camilo Lavado
+> astro "check"
+
+16:07:15 [content] Syncing content
+16:07:15 [content] Synced content
+16:07:15 [types] Generated 55ms
+16:07:15 [check] Getting diagnostics for Astro files in C:\Archivos\02_Proyectos_Dev\astro\Camilo Lavado...
+[96msrc/components/BackgroundParticles.astro[0m:[93m64[0m:[93m58[0m - [93mwarning[0m[90m ts(6133): [0m'j' is declared but its value is never read.
+
+[7m64[0m     const dots = Array.from({ length: numDots }).map((_, j) => {
+[7m  [0m [93m                                                         ~[0m
+
+[96msrc/components/Hero.astro[0m:[93m15[0m:[93m17[0m - [91merror[0m[90m ts(2322): [0mType '{ strokeLinecap: string; strokeLinejoin: string; strokeWidth: number; d: string; }' is not assignable to type 'SVGAttributes'.
+  Property 'strokeLinecap' does not exist on type 'SVGAttributes'. Did you mean ''stroke-linecap''?
+
+[7m15[0m           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+[7m  [0m [91m                ~~~~~~~~~~~~~[0m
+
+[96msrc/components/ResumeSection.jsx[0m:[93m47[0m:[93m9[0m - [93mwarning[0m[90m ts(6133): [0m'btn' is declared but its value is never read.
+
+[7m47[0m   const btn = useBtnClasses();
+[7m  [0m [93m        ~~~[0m
+
+Result (20 files): 
+- 1 error
+- 0 warnings
+- 2 hints
+
+ÔÇëELIFECYCLEÔÇë Command failed with exit code 1.

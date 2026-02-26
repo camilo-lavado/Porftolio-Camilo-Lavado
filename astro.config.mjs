@@ -5,8 +5,10 @@ import react from '@astrojs/react';
 import vercel from '@astrojs/vercel'; // ✅ no uses /serverless
 
 export default defineConfig({
-  output: 'server', // o 'static' si tu portfolio no necesita SSR
-  adapter: vercel(),
+  output: 'server',
+  adapter: vercel({
+    edgeMiddleware: true,
+  }),
   vite: {
     plugins: [tailwindcss()],
     build: {

@@ -2,30 +2,47 @@
   {
     "title": "Rugby League Manager - API",
     "description": "*EN PROGRESO* Backend en NestJS para la gestión completa de ligas de rugby en Chile y LATAM. Incluye autenticación, control de roles y documentación Swagger.",
-    "tags": ["NestJS", "PostgreSQL", "TypeORM"],
+    "tags": [
+      "NestJS",
+      "PostgreSQL",
+      "TypeORM"
+    ],
     "image": "/projects/RLM-Backend.webp",
     "url": "https://rugby-league-manager-backend.onrender.com/api/docs"
   },
   {
     "title": "Almacenes Digitales",
     "description": "Sistema web para el control de inventario y ventas, con login seguro, administración de usuarios y reportes personalizados. Trabajé en la implementación de nuevos modulos como el de fiados y ventas.",
-    "tags": ["Java", "MySQL", "Spring Boot", "JWT", "PrimeFaces"],
+    "tags": [
+      "Java",
+      "MySQL",
+      "Spring Boot",
+      "JWT",
+      "PrimeFaces"
+    ],
     "image": "/projects/Adigitales.webp",
     "url": "https://www.almacenesdigitales.cl"
   },
   {
-    "title": "AD-Data",
-    "description": "Dashboard analítico de datos para clientes de Almacenes Digitales, con visualización en tiempo real e integración con Power BI. (Acceso restringido)",
-    "tags": ["Java", "MySQL", "Spring Boot", "JWT", "React", "Power BI"],
-    "image": "/projects/AD-data.webp",
-    "url": "https://ad-data.cl/"
+    "title": "Juanshigram — El Verdadero Lápiz",
+    "description": "Landing page y portafolio para artista urbano y ghostwriter. Integra diseño moderno, sección de servicios profesionales y accesos directos a plataformas musicales.",
+    "tags": [
+      "Astro",
+      "Tailwind CSS",
+      "Frontend"
+    ],
+    "image": "/projects/Juanshigram.webp",
+    "url": "https://juanshigram.vercel.app/"
   },
   {
-    "title": "Portafolio diseñador UX/UI - Matías Valencia",
-    "description": "*EN PROGRESO* ",
-    "tags": ["Astro", "Tailwind", "React"],
-    "image": "/projects/MV-Portfolio.webp",
-    "url": "https://portfolio-mv-12zs.onrender.com/es"
+    "title": "Cabal Codex",
+    "description": "Herramienta digital y enciclopedia para Blood Bowl 2025. Permite gestionar equipos, consultar reglas, construir rosters y organizar torneos.",
+    "tags": [
+      "React",
+      "Tailwind CSS",
+      "Web App"
+    ],
+    "image": "/projects/Cabal-Codex.webp",
+    "url": "https://cabal-codex.vercel.app/"
   }
 ]
-
