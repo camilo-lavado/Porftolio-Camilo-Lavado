@@ -68,7 +68,7 @@ function NavbarComponent() {
       /* @__PURE__ */ jsx(
         "img",
         {
-          src: "/logo.svg",
+          src: "/logo-cl.svg",
           alt: "Camilo Lavado Logo",
           className: "h-10 w-10 shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(45,212,191,0.6)]"
         }
@@ -134,7 +134,7 @@ const $$Layout = createComponent(($$result, $$props, $$slots) => {
 const $$Hero = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative"> <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(45,212,191,0.15)_0,rgba(0,0,0,0)_50%)]"></div> <div class="z-10 flex flex-col items-center"> <h1 class="text-5xl md:text-7xl font-extrabold mb-4 font-outfit tracking-tight animate-fade-in-up"> <span class="text-white">Camilo</span> <span class="text-gradient drop-shadow-[0_0_15px_rgba(45,212,191,0.5)]">Lavado</span> </h1> <p class="text-xl md:text-3xl mb-8 text-gray-300 font-medium tracking-wide animate-fade-in-up" style="animation-delay: 200ms;">
 Full Stack Developer
-</p> <a href="#about" class="group relative inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-bold text-white transition-all duration-300 bg-white/5 border border-white/20 rounded-full hover:bg-white/10 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] animate-fade-in-up" style="animation-delay: 400ms;"> <span>Conóceme más</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round"${addAttribute(2, "strokeWidth")} d="M19 14l-7 7m0 0l-7-7m7 7V3"></path> </svg> </a> </div> </section>`;
+</p> <a href="#about" class="group relative inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-bold text-white transition-all duration-300 bg-white/5 border border-white/20 rounded-full hover:bg-white/10 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] animate-fade-in-up" style="animation-delay: 400ms;"> <span>Conóceme más</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path> </svg> </a> </div> </section>`;
 }, "C:/Archivos/02_Proyectos_Dev/astro/Camilo Lavado/src/components/Hero.astro", void 0);
 
 const $$About = createComponent(($$result, $$props, $$slots) => {
@@ -186,29 +186,26 @@ const projects = [
 		url: "https://www.almacenesdigitales.cl"
 	},
 	{
-		title: "AD-Data",
-		description: "Dashboard analítico de datos para clientes de Almacenes Digitales, con visualización en tiempo real e integración con Power BI. (Acceso restringido)",
-		tags: [
-			"Java",
-			"MySQL",
-			"Spring Boot",
-			"JWT",
-			"React",
-			"Power BI"
-		],
-		image: "/projects/AD-data.webp",
-		url: "https://ad-data.cl/"
-	},
-	{
-		title: "Portafolio diseñador UX/UI - Matías Valencia",
-		description: "*EN PROGRESO* ",
+		title: "Juanshigram — El Verdadero Lápiz",
+		description: "Landing page y portafolio para artista urbano y ghostwriter. Integra diseño moderno, sección de servicios profesionales y accesos directos a plataformas musicales.",
 		tags: [
 			"Astro",
-			"Tailwind",
-			"React"
+			"Tailwind CSS",
+			"Frontend"
 		],
-		image: "/projects/MV-Portfolio.webp",
-		url: "https://portfolio-mv-12zs.onrender.com/es"
+		image: "/projects/Juanshigram.webp",
+		url: "https://juanshigram.vercel.app/"
+	},
+	{
+		title: "Cabal Codex",
+		description: "Herramienta digital y enciclopedia para Blood Bowl 2025. Permite gestionar equipos, consultar reglas, construir rosters y organizar torneos.",
+		tags: [
+			"React",
+			"Tailwind CSS",
+			"Web App"
+		],
+		image: "/projects/Cabal-Codex.webp",
+		url: "https://cabal-codex.vercel.app/"
 	}
 ];
 

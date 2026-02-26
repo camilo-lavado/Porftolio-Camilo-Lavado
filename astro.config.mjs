@@ -6,9 +6,7 @@ import vercel from '@astrojs/vercel'; // ✅ no uses /serverless
 
 export default defineConfig({
   output: 'server',
-  adapter: vercel({
-    edgeMiddleware: true,
-  }),
+  adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
     build: {
