@@ -1,16 +1,5 @@
 [
   {
-    "title": "Rugby League Manager - API",
-    "description": "*EN PROGRESO* Backend en NestJS para la gestión completa de ligas de rugby en Chile y LATAM. Incluye autenticación, control de roles y documentación Swagger.",
-    "tags": [
-      "NestJS",
-      "PostgreSQL",
-      "TypeORM"
-    ],
-    "image": "/projects/RLM-Backend.webp",
-    "url": "https://rugby-league-manager-backend.onrender.com/api/docs"
-  },
-  {
     "title": "Almacenes Digitales",
     "description": "Sistema web para el control de inventario y ventas, con login seguro, administración de usuarios y reportes personalizados. Trabajé en la implementación de nuevos modulos como el de fiados y ventas.",
     "tags": [
@@ -32,7 +21,7 @@
       "Frontend"
     ],
     "image": "/projects/Juanshigram.webp",
-    "url": "https://juanshigram.vercel.app/"
+    "url": "https://www.juanshimusic.com/"
   },
   {
     "title": "Cabal Codex",

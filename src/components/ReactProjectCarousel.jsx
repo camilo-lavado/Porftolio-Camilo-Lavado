@@ -1,150 +1,249 @@
-import { useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Navigation,
   Pagination,
   Autoplay,
-  EffectCoverflow,
+  Keyboard,
+  A11y,
 } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, ChevronLeft, ChevronRight, Github } from 'lucide-react';
 import projects from '../data/projects.json';
 
 export default function ReactProjectCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
+  const activeProject = projects[activeIndex] || projects[0];
+
+  // Attach custom navigation after swiper init
   useEffect(() => {
-    if (
-      swiperRef.current &&
-      prevRef.current &&
-      nextRef.current &&
-      swiperRef.current.params?.navigation
-    ) {
-      swiperRef.current.params.navigation.prevEl = prevRef.current;
-      swiperRef.current.params.navigation.nextEl = nextRef.current;
-      swiperRef.current.navigation?.init();
-      swiperRef.current.navigation?.update();
+    const swiper = swiperRef.current;
+    if (swiper && prevRef.current && nextRef.current) {
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
+      swiper.navigation.init();
+      swiper.navigation.update();
     }
   }, []);
 
-  return (
-    <section className="py-24 px-4 max-w-6xl mx-auto" id="projects">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-outfit font-bold text-white mb-4 tracking-tight inline-block relative">
-          Proyectos <span className="text-gradient">Destacados</span>
-        </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-          Una selección de mis trabajos más recientes, explorando desde interfaces modernas hasta arquitecturas sólidas de backend.
-        </p>
-      </div>
+  const handleSlideChange = useCallback((swiper) => {
+    setActiveIndex(swiper.realIndex);
+  }, []);
 
-      {/* Flechas visibles solo en sm+ */}
-      <div className="flex justify-end gap-4 mb-8 sm:flex hidden px-4">
+  const handleProgress = useCallback((swiper, prog) => {
+    setProgress(prog);
+  }, []);
+
+  return (
+    <section className="py-24 px-4 max-w-7xl mx-auto" id="projects">
+      {/* ── Header ── */}
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase rounded-full border border-teal-500/30 text-teal-400 bg-teal-500/10">
+          Portafolio
+        </span>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-5 tracking-tight">
+          Proyectos{' '}
+          <span className="text-gradient">Destacados</span>
+        </h2>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          Una selección de mis trabajos más recientes, explorando desde
+          interfaces modernas hasta arquitecturas sólidas de backend.
+        </p>
+      </motion.div>
+
+      {/* ── Carousel Container ── */}
+      <div className="relative">
+        {/* Navigation Arrows — desktop */}
         <button
           ref={prevRef}
-          className="flex items-center justify-center w-10 h-10 rounded-full glass-panel text-white hover:text-teal-400 hover:border-teal-400/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
-          aria-label="Anterior"
-          title="Proyecto anterior"
+          className="carousel-nav-btn carousel-nav-prev"
+          aria-label="Proyecto anterior"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          <ChevronLeft size={22} />
         </button>
         <button
           ref={nextRef}
-          className="flex items-center justify-center w-10 h-10 rounded-full glass-panel text-white hover:text-teal-400 hover:border-teal-400/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
-          aria-label="Siguiente"
-          title="Proyecto siguiente"
+          className="carousel-nav-btn carousel-nav-next"
+          aria-label="Proyecto siguiente"
         >
-           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <ChevronRight size={22} />
         </button>
+
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, Keyboard, A11y]}
+          grabCursor
+          keyboard={{ enabled: true }}
+          slidesPerView={1}
+          spaceBetween={24}
+          speed={700}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          breakpoints={{
+            640: { slidesPerView: 1.2, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 24 },
+            1024: { slidesPerView: 2.5, spaceBetween: 28 },
+            1280: { slidesPerView: 3, spaceBetween: 32 },
+          }}
+          navigation
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          onSlideChange={handleSlideChange}
+          onProgress={handleProgress}
+          className="project-carousel"
+        >
+          {projects.map((project, i) => (
+            <SwiperSlide key={project.title} className="carousel-slide">
+              <ProjectCard project={project} isActive={activeIndex === i} index={i} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* ── Mobile swipe hint ── */}
+        <p className="text-center text-sm text-gray-500 mt-6 sm:hidden flex items-center justify-center gap-2">
+          <span className="inline-block w-6 h-[1px] bg-gray-600" />
+          Desliza para explorar
+          <span className="inline-block w-6 h-[1px] bg-gray-600" />
+        </p>
+
+        {/* ── Progress bar ── */}
+        <div className="mt-10 max-w-md mx-auto">
+          <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-gradient-to-r from-teal-400 to-blue-500 rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: `${((activeIndex + 1) / projects.length) * 100}%` }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            />
+          </div>
+          <div className="flex justify-between items-center mt-3 text-xs text-gray-500 font-mono">
+            <span>{String(activeIndex + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span>
+            <span className="text-gray-400 font-outfit">{activeProject.title}</span>
+          </div>
+        </div>
       </div>
-
-      {/* Swipe hint para móviles */}
-      <p className="text-center text-sm text-gray-400 mb-4 sm:hidden animate-pulse">
-        ⇢ Desliza para ver más proyectos
-      </p>
-
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-        loop={true}
-        effect="coverflow"
-        coverflowEffect={{
-          rotate: 20,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: false,
-        }}
-        slidesPerView={1}
-        spaceBetween={24}
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3500 }}
-        breakpoints={{
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-        navigation
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        className="custom-swiper"
-      >
-        {projects.map((project) => (
-          <SwiperSlide key={project.title} className="mt-6">
-            <motion.a
-              href={project.url || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block h-full"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, ease: 'easeOut' }}
-            >
-              <div className="glass-panel p-4 rounded-2xl border border-white/10 hover:border-teal-500/50 hover:shadow-[0_0_20px_rgba(45,212,191,0.2)] transition-all duration-300 h-full min-h-[380px] group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="h-full flex flex-col justify-between relative z-10">
-                  <div className="overflow-hidden rounded-xl mb-4 h-48">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h3 className="text-xl font-outfit font-semibold text-white mb-2 group-hover:text-teal-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-400 mb-4 flex-grow leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.a>
-          </SwiperSlide>
-        ))}
-      </Swiper>
     </section>
   );
+}
+
+/* ─────────────────────────────────────
+   Project Card — Sub-component
+   ───────────────────────────────────── */
+function ProjectCard({ project, isActive, index }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const cardContent = (
+    <motion.div
+      className={`project-card ${isActive ? 'project-card--active' : ''}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+    >
+      {/* Image container */}
+      <div className="project-card__image-wrapper">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="project-card__image"
+          loading="lazy"
+          draggable="false"
+        />
+        {/* Overlay */}
+        <div className="project-card__overlay">
+          <AnimatePresence>
+            {isHovered && (
+              <motion.div
+                className="flex gap-3"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.25 }}
+              >
+                {project.url && (
+                  <span className="project-card__action-btn">
+                    <ExternalLink size={18} />
+                    <span>Ver proyecto</span>
+                  </span>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card__action-btn project-card__action-btn--ghost"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Github size={18} />
+                  </a>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+        {/* Status badge */}
+        {project.description?.includes('*EN PROGRESO*') && (
+          <span className="absolute top-3 left-3 z-20 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-amber-500/90 text-black rounded-full flex items-center gap-1.5 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+            En progreso
+          </span>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="project-card__content">
+        <h3 className="project-card__title">{project.title}</h3>
+        <p className="project-card__description">
+          {project.description?.replace('*EN PROGRESO* ', '')}
+        </p>
+        <div className="project-card__tags">
+          {project.tags.map((tag) => (
+            <span key={tag} className="project-card__tag">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+
+  if (project.url) {
+    return (
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block h-full no-underline"
+        style={{ textDecoration: 'none', color: 'inherit' }}
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
+  return cardContent;
 }
